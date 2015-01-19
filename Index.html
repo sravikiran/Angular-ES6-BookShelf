@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css"/>
+    <style type="text/css">
+        .view{
+            align-content: center;
+        }
+
+        .bookRead{
+            text-decoration: line-through;
+            font-style: italic;
+        }
+
+        .input-group{
+            margin-bottom: 10px;
+            margin-top: 10px;
+        }
+
+        .ng-invalid.ng-touched{
+            border-color:red;
+        }
+
+        .error-messages{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#/">e-Book Shelf</a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li><a href="#/">Books List</a></li>
+                        <li><a href="#/addBook">Add a Book</a></li>
+                        <li><a href="#/archive">Archive</a></li>
+                    </ul>
+                    </div>
+                </div>
+            </nav>
+        <div ng-view="" class="view"></div>
+    </div>
+
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-messages/angular-messages.js"></script>
+    <script src="bower_components/traceur/traceur.js"></script>
+    <script>
+        traceur.options.experimental = true;
+        new traceur.WebPageTranscoder(document.location.href).run();
+    </script>
+
+    <script type="module" src="app/bootstrap.js"></script>
+</body>
+</html>

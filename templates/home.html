@@ -1,0 +1,31 @@
+<div>
+    <h3>List of Books</h3>
+    <br/>
+    <div>
+        <div ng-if="vm.readSuccess" class='alert alert-success'>
+            {{vm.readSuccessMessage}}
+        </div>
+        <div ng-if="vm.archiveSuccess" class='alert alert-success'>
+            Book Archived! Now, you can find it in archived list.
+        </div>
+    </div>
+    <br/>
+    <table class="table">
+        <tr>
+            <th>Book Name</th>
+            <th>Author</th>
+            <th>Mark Read</th>
+            <th>Add to Archive</th>
+        </tr>
+        <tr ng-repeat="book in vm.books" ng-class="{'bookRead':book.read}">
+            <td>{{book.title}}</td>
+            <td>{{book.author}}</td>
+            <td>
+                <button ng-click="vm.markBookAsRead(book.bookId, !book.read)" class="btn">Mark Read</button>
+            </td>
+            <td>
+                <button ng-click="vm.addToArchive(book.bookId)" class="btn" ng-disabled="!book.read">Add to Archive</button>
+            </td>
+        </tr>
+    </table>
+</div>

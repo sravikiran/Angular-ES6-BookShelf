@@ -1,0 +1,11 @@
+{
+  "name": "BookShelfApp",
+  "version": "0.0.1",
+  "devDependencies": {
+    "body-parser": "^1.10.1",
+    "express": "^4.10.6",
+    "gulp": "^3.8.10",
+    "gulp-express": "^0.1.4",
+    "underscore": "^1.7.0"
+  }
+}

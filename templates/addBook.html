@@ -1,0 +1,34 @@
+<div>
+    <h3>Add a new Book</h3>
+    <br/>
+    <div ng-if="vm.addSuccess" class='alert alert-success'>
+        Book successfully added. You can find it in the list of active books!
+    </div>
+    <div ng-if="vm.addFailed" class='alert alert-error'>
+        Sorry, something went wrong. Adding book was not successful.
+    </div>
+    <form name="vm.addBookForm" ng-submit='vm.addBook()' novalidate>
+        <div class="input-group">
+            <span>Title of Book</span>
+            <input type="text" name="title" class="form-control" ng-model="vm.book.title" required ng-model-options="{ updateOn: 'blur' }" unique-book-title>
+        </div>
+
+        <div class="input-group">
+            <span>Author</span>
+            <input type="text" name="author" class="form-control" ng-model="vm.book.author" required>
+        </div>
+
+        <div class="input-group">
+            <input type="submit" value="Add Book" class="btn btn-primary" ng-disabled="vm.addBookForm.$invalid" />
+            <button ng-click="vm.resetBook()" class="btn">Reset</button>
+        </div>
+    </form>
+
+    <div ng-if='vm.addBookForm.title.$dirty' ng-messages='vm.addBookForm.title.$error' class='error-messages'>
+        <div ng-message='required'>Title is missing value</div>
+        <div ng-message='uniqueBookTitle'>Title already exists</div>
+    </div>
+    <div ng-if='vm.addBookForm.author.$dirty' ng-messages='vm.addBookForm.author.$error' class='error-messages'>
+        <div ng-message='required'>Author is missing value</div>
+    </div>
+</div>

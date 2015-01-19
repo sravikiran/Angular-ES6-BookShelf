@@ -1,0 +1,14 @@
+<div>
+    <h3>Archived Books</h3>
+    <br/>
+    <table class="table">
+        <tr>
+            <th>Book Name</th>
+            <th>Author</th>
+        </tr>
+        <tr ng-repeat="book in vm.books">
+            <td>{{book.title}}</td>
+            <td>{{book.author}}</td>
+        </tr>
+    </table>
+</div>
