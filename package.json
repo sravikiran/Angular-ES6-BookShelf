@@ -1,6 +1,12 @@
 {
   "name": "BookShelfApp",
   "version": "0.0.1",
+  "configs": {
+    "gulp": "./node_modules/.bin/gulp"
+  },
+  "scripts": {
+    "gulp": "gulp"
+  },
   "devDependencies": {
     "body-parser": "^1.10.1",
     "express": "^4.10.6",
